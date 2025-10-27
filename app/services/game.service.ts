@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Game } from '../model/game.model';
 import { Type } from '../model/type.model';
-import { of, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,10 +35,6 @@ export class GameService {
 
   listeGames(): Game[] {
     return this.games;
-  }
-
-  listeGames1(): Observable<Game[]> {
-    return of(this.games);
   }
 
   ajouterGame(game: Game) {

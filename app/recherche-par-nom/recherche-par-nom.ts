@@ -21,13 +21,10 @@ export class RechercheParNom implements OnInit {
   IdType!: number;
   constructor(private gameService: GameService) { }
   ngOnInit(): void {
-    this.gameService.listeGames1().subscribe(games => {
-      console.log(games);
-      this.games = games;
-    })
-  };
+    this.allgames= this.gameService.listeGames();
+    this.games=this.gameService.listeGames();
+  }
   onKeyUp(filterText: string) {
-    this.games = this.allgames.filter(item =>
-      item.nomGame?.toLowerCase().includes(filterText));
+    this.games = this.allgames.filter(item => item.nomGame?.toLowerCase().includes(filterText));
   }
 }
